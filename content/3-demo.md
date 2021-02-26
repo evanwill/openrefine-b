@@ -1,9 +1,7 @@
 ---
-title: Start
-nav: true
+title: Refine Basics
+nav: Demo
 ---
-
-# Basics
 
 Let's look at the basic functions of OpenRefine using typical digital collection metadata.
 Download:
