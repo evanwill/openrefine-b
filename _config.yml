@@ -14,7 +14,7 @@ title: Refine!
 # title-icon appears in the header to give some pizazz (leave blank for none)
 # choose from Font Awesome 5 free, https://fontawesome.com/icons?d=gallery&m=free
 # some options: fas fa-wrench; fas fa-cogs; fas fa-code; fas fa-chalkboard-teacher; fas fa-book-open
-title-icon: far fa-gem
+title-icon: gem
 # description, keywords, and image for meta tags
 description: "Introducing OpenRefine, a power tool for the messy work of evaluating, cleaning, and transforming data."
 keywords: "OpenRefine, academic workshop, data transformation"
