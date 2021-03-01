@@ -3,10 +3,15 @@ title: Refine Basics
 nav: Demo
 ---
 
+- create project
+- explore
+- transform
+- export
+
 Let's look at the basic functions of OpenRefine using typical digital collection metadata.
 Download:
 
-- [`potlatch-historical-collection.csv`]({{ '/assets/potlatch-historical-collection.csv' | relative_url }}){:target="_blank"} (from [University of Idaho Library](https://www.lib.uidaho.edu/digital/){:target="_blank"})
+- [`potlatch-historical-collection.csv`]({{ '/assets/potlatch-historical-collection.csv' | relative_url }}){:target='_blank' rel='noopener'} (from [University of Idaho Library](https://www.lib.uidaho.edu/digital/){:target='_blank' rel='noopener'})
 
 **Create Project:**
 
@@ -36,11 +41,11 @@ Edit:
     - Language (language used in the object, [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3))
 - Transform column
     - Edit cells > Common Transformations > Trim leading and trailing whitespace
-    - Edit cells > Transform > use [GREL](https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language){:target="_blank"}
+    - Edit cells > Transform > use [GREL](https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language){:target='_blank' rel='noopener'}
         - add text, `value + " something new"`
         - find & replace, `value.replace("old","new")`
         - get values from other cells, `cells['column_name'].value`
-        - [GREL dates](https://github.com/OpenRefine/OpenRefine/wiki/GREL-Date-Functions){:target="_blank"}, `value.toDate().toString('yyyy-MM-dd')`
+        - [GREL dates](https://github.com/OpenRefine/OpenRefine/wiki/GREL-Date-Functions){:target='_blank' rel='noopener'}, `value.toDate().toString('yyyy-MM-dd')`
 - Create new columns
     - Edit column > Add column based on... `value.length()`
     - Edit column > Split into several columns... 

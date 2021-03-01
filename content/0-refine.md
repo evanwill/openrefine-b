@@ -3,7 +3,7 @@ title: What is OpenRefine?
 nav: Refine
 ---
 
-OpenRefine is a <span class="term">[free](https://www.gnu.org/philosophy/free-sw.en.html){:target='_blank' rel='noopener'}</span>, [open source](https://github.com/OpenRefine/OpenRefine){:target='_blank' rel='noopener'}, Java application for <span class="term">exploring, cleaning, and transforming data</span>, that runs offline in a web browser. 
+OpenRefine is a <span class="term">[free](https://www.gnu.org/philosophy/free-sw.en.html){:target='_blank' rel='noopener'}</span>, [open source](https://github.com/OpenRefine/OpenRefine){:target='_blank' rel='noopener'}, standalone Java application for <span class="term">exploring, cleaning, and transforming data</span>, that runs offline in a web browser. 
 
 {% capture text %}
 The original creator [David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf){:target='_blank' rel='noopener'} said Refine is:
