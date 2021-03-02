@@ -6,18 +6,18 @@ nav: Data
 One of Refine's strengths is the flexibility to handle all sorts of data from all sorts of sources:
 
 {% capture formats %}
-<span class="term">Import formats:</span> CSV, TSV, custom separator, Excel, ODF spreadsheet, XML, JSON, RDF, Google Sheets, MARC, line-based text...
+<span class="term">Import formats:</span> CSV, TSV, custom separator, Excel, ODS spreadsheet, XML, JSON, RDF, Google Sheets, MARC, line-based text...
 
 <span class="term">Import sources:</span> local file(s), archive (zip), URL, clipboard, database, or Google Sheets.
 
-<span class="term">Output formats:</span> TSV, CSV, HTML, Excel, ODF spreadsheet, SQL, Wikidata, RDF schema, or custom template...
+<span class="term">Output formats:</span> TSV, CSV, HTML, Excel, ODS spreadsheet, SQL, Wikidata, RDF schema, or custom template...
 {% endcapture %}
 {% include card.html text=formats %}
 
-Refine imports the data *without* changing the original source, saving a copy using an optimized format in the "workspace directory" on your computer.
+When creating a new project, Refine imports the data *without* changing the original source, saving a copy using an optimized format in the "workspace directory" on your computer.
 Importantly, Refine is *not* a cloud based service, no data is sent off your computer during this process (see [where data is stored](https://docs.openrefine.org/manual/installing#set-where-data-is-stored) and [data privacy FAQ](https://openrefine.org/privacy.html)).
 
-Once imported, Refine's interface represents the data in a tabular grid, using this basic terminology: 
+Once imported into a project, Refine's interface represents the data in a tabular grid, using this basic terminology: 
 
 {% include figure.html img="refine-terms.png" alt="Refine row, column, cell labelled" %}
 
