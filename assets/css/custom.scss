@@ -9,7 +9,21 @@ $top-border: #424242;
 $text-color: #111 !default;
 $link-color: #2a7ae2 !default;
 $base-font-size: 1.1rem;
-// $base-font-family: ;
+
+/* font base */ 
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans Regular'), url('{{ "/assets/css/fonts/notosans-regular-webfont.woff" | relative_url }}') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  src: local('Source Code Pro'), url('{{ "/assets/css/fonts/sourcecodepro-regular-webfont.woff" | relative_url }}') format('woff');
+  font-display: swap;
+}
+$base-font-family: 'Noto Sans',"Segoe UI",Roboto,"Helvetica Neue",Helvetica, Arial, sans-serif;
+$code-font-family: 'Source Code Pro',Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
 
 // limit container size to make reading easier
 $container-max: 750px;

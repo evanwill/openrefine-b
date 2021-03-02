@@ -2,6 +2,7 @@ body {
     @if variable-exists(base-font-family) { font-family: $base-font-family; }
     @if variable-exists(base-font-size) { font-size: $base-font-size; }
     @if variable-exists(text-color) { color: $text-color; }
+    @if variable-exists(code-font-family) { code { font-family: $code-font-family; } }
 }
 @if variable-exists(link-color) {
     a {
