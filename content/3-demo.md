@@ -3,34 +3,49 @@ title: Refine Basics
 nav: Demo
 ---
 
-- create project
-- explore
-- transform
-- export
+On Refine's home page you will see three main options on the left side tab menu:
+
+- <span class="term">Create Project</span> - this is where you start a new project--we will cover everything in next section! 
+- <span class="term">Open Project</span> - all your projects will be saved in your "workspace directory" and can be reopened at any time. 
+- <span class="term">Import Project</span> - complete Refine projects can be exported as an archive file (".zip" or ".tar.gz") to share or preserve. This option allows you to open the archive to use the project.
+
+## Create Project
 
 Let's look at the basic functions of OpenRefine using typical digital collection metadata.
 Download:
 
 - [`potlatch-historical-collection.csv`]({{ '/assets/potlatch-historical-collection.csv' | relative_url }}){:target='_blank' rel='noopener'} (from [University of Idaho Library](https://www.lib.uidaho.edu/digital/){:target='_blank' rel='noopener'})
 
-**Create Project:**
+Create Project: 
 
 - "Get data from" options
-- "Configure Parsing Options", *check character encoding* (UTF-8!) and options, then give your project a name (names are easier to work with if there are no spaces or dashes) and click Create project.
-- Refine never over writes your original data, it creates a copy!
-- Information is *not* sent over internet. The data is copied into your workspace directory in Refine's specialized format (find your workspace directory by looking for the link at the bottom of the "Open Project" page).
+- "Configure Parsing Options" - *check character encoding* (UTF-8!) and options, then give your project a name (names are easier to work with if there are no spaces or dashes) and click Create project.
+- Refine never over writes your original data, it creates a copy! Information is *not* sent over internet. The data is copied into your workspace directory in Refine's specialized format 
 - **Sanity Check**, ensure you have the expected number of rows! Keep this number in mind as you work through the project.
 
-## Columns
+Interface elements: 
 
-Unlike most spreadsheets which focus on rows, Refine is column-centric.
+- Project name upper left
+- Facet / Filter - Undo / Redo pane on left
+- Row count
+- Show as: rows / records
+- Show: 5 10 25 50 + pages
+
+## Explore 
+
 Most operations are accessed via the column menus.
-
-Explore:
 
 - Text filter
 - Facet > Text facet
+    - include / invert
+    - sort by, choices
 - Facet > Customized facets > Facet by blank
+- Sort
+    - Sort will add "Sort" menu at the top of the table, near the "rows" options. This indicates the sort is applied to your view. However, it is only a *view*, the data has not been changed. 
+    - To permanently change the order of the rows, click the sort menu and select "Reorder rows permanently"
+- All > Star / Flag
+
+## Transform 
 
 Edit: 
 
@@ -58,7 +73,7 @@ Edit:
     - Edit columns > Re-order / remove columns
      - Star, Flag
 
-## Project basics
+## Export
 
 Export:
 

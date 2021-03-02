@@ -5,18 +5,18 @@ nav: Resources
 
 **Reference:**
 
-- [OpenRefine User Manual](https://docs.openrefine.org/){:target='_blank' rel='noopener'} (authoritative resource 2020+, the Wiki will eventually be phased out)
-- [OpenRefine Wiki](https://github.com/OpenRefine/OpenRefine/wiki){:target='_blank' rel='noopener'}
-- [GREL reference](https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language){:target='_blank' rel='noopener'}
+- [OpenRefine User Manual](https://docs.openrefine.org/){:target='_blank' rel='noopener'} (authoritative resource 2020+, the previous [OpenRefine Wiki](https://github.com/OpenRefine/OpenRefine/wiki){:target='_blank' rel='noopener'} is being phased out)
+- [GREL reference](https://docs.openrefine.org/manual/grelfunctions){:target='_blank' rel='noopener'}
 
 **Help:**
 
-- [OpenRefine Google Group](http://groups.google.com/d/forum/openrefine){:target='_blank' rel='noopener'}
+- [OpenRefine FAQ](https://github.com/OpenRefine/OpenRefine/wiki/FAQ){:target='_blank' rel='noopener'}
+- [OpenRefine Google Group](https://groups.google.com/g/openrefine){:target='_blank' rel='noopener'}
 - [stackoverflow tag](https://stackoverflow.com/questions/tagged/openrefine){:target='_blank' rel='noopener'}
 
 **Tutorials:** 
 
-- Big wiki [List of OpenRefine tutorials](https://github.com/OpenRefine/OpenRefine/wiki/External-Resources){:target='_blank' rel='noopener'}
+- Official wiki [List of OpenRefine tutorials](https://github.com/OpenRefine/OpenRefine/wiki/External-Resources){:target='_blank' rel='noopener'}
 - Data Carpentry: [Data Cleaning with OpenRefine for Ecologists](http://www.datacarpentry.org/OpenRefine-ecology-lesson/){:target='_blank' rel='noopener'} or [OpenRefine for Social Science Data](https://datacarpentry.org/openrefine-socialsci/){:target='_blank' rel='noopener'}.
 - [Grateful Data](https://github.com/scottythered/gratefuldata/wiki){:target='_blank' rel='noopener'}, extensive tutorial covering harvesting and enriching open Grateful Dead data.
 - [Fetching and Parsing Data from the Web with OpenRefine](https://programminghistorian.org/en/lessons/fetch-and-parse-data-with-openrefine)
