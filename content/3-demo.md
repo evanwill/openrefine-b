@@ -9,6 +9,8 @@ On Refine's home page you will see three main options on the left side tab menu:
 - <span class="term">Open Project</span> - all your projects will be saved in your "workspace directory" and can be reopened at any time. 
 - <span class="term">Import Project</span> - complete Refine projects can be exported as an archive file (".zip" or ".tar.gz") to share or preserve. This option allows you to open the archive to use the project.
 
+----------
+
 ## Create Project
 
 Let's look at the basic functions of OpenRefine using typical digital collection metadata.
@@ -31,6 +33,8 @@ Interface elements:
 - Show as: rows / records
 - Show: 5 10 25 50 + pages
 
+----------
+
 ## Explore 
 
 Most operations are accessed via the column menus.
@@ -44,6 +48,8 @@ Most operations are accessed via the column menus.
     - Sort will add "Sort" menu at the top of the table, near the "rows" options. This indicates the sort is applied to your view. However, it is only a *view*, the data has not been changed. 
     - To permanently change the order of the rows, click the sort menu and select "Reorder rows permanently"
 - All > Star / Flag
+
+----------
 
 ## Transform 
 
@@ -72,6 +78,8 @@ Edit:
     - Edit rows > Remove all matching rows
     - Edit columns > Re-order / remove columns
      - Star, Flag
+
+----------
 
 ## Export
 

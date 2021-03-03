@@ -10,7 +10,7 @@ Check the [official installation documentation](https://docs.openrefine.org/manu
 
 {% capture windows %}
 - **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest "Windows kit with embedded Java" package. This is a self contained package that includes everything needed to run Refine on your system.
-- **Extract:** the package you downloaded will be a zip file that needs to be extracted (e.g. "openrefine-win-with-java-3.4.1.zip"). Unzip the package by right clicking and selecting Extract All. Move the resulting folder to a sensible permanent location on your computer, e.g. "C:\openrefine\".
+- **Extract:** the package you downloaded will be a zip file that needs to be extracted (e.g. "openrefine-win-with-java-3.4.1.zip"). Unzip the package by right clicking and selecting Extract All. Move the resulting folder to a sensible permanent location on your computer, e.g. "C:\openrefine\" or Documents.
 - **Run:** inside the folder you extracted, double click "openrefine.exe" to start Refine. The first time you may get a warning that the publisher could not be verified, dismiss the warning and click *Run*. Once open, pin the Refine icon to your taskbar for easy access in the future! 
 
 *Note:* if you would like to use the traditional Refine kit, check [notes on installing Java on Windows]({{ '/content/win-java.html' | relative_url }}).

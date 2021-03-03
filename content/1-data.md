@@ -15,7 +15,7 @@ One of Refine's strengths is the flexibility to handle all sorts of data from al
 {% include card.html text=formats %}
 
 When creating a new project, Refine imports the data *without* changing the original source, saving a copy using an optimized format in the "workspace directory" on your computer.
-Importantly, Refine is *not* a cloud based service, no data is sent off your computer during this process (see [where data is stored](https://docs.openrefine.org/manual/installing#set-where-data-is-stored) and [data privacy FAQ](https://openrefine.org/privacy.html)).
+Importantly, Refine is *not* a cloud based service, no data is sent off your computer during this process (see [where data is stored](https://docs.openrefine.org/manual/installing#set-where-data-is-stored){:target='_blank' rel='noopener'} and [data privacy FAQ](https://openrefine.org/privacy.html){:target='_blank' rel='noopener'}).
 
 Once imported into a project, Refine's interface represents the data in a tabular grid, using this basic terminology: 
 
@@ -26,7 +26,7 @@ For very large data sets, you may want to [increase memory allocation](https://d
 
 ## Messy Data 
 
-Inconsistent formats, unnecessary white space, extra characters, typos, etc... 
+Inconsistent formats, unnecessary white space, extra characters, typos, incomplete records, etc... 
 Messy data is the bane of analysis! 
 
 For example, each column contains exactly the same info:
@@ -46,3 +46,7 @@ Multi-valued cells limit ability to manipulate, clean, and use the data:
 {:.table .table-bordered}
 
 Luckily, Refine provides powerful visualizations and tools to discover, isolate, and fix these types of data issues.
+
+Unfortunately, there isn't a lot of literature out there about standards for wrangling and cleaning data--it has been a behind the scenes art that consumes a lot of hidden labor in a project.
+It is essential for the process of analysis, as well as for [preparing your data for preservation](https://data.research.cornell.edu/content/tabular-data){:target='_blank' rel='noopener'} and reuse.
+Documenting your process and being transparent will help both yourself and others understand your data set--and shed light on the important work that has gone into it.
