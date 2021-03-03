@@ -18,6 +18,7 @@ nav: Resources
 - Data Carpentry: [Data Cleaning with OpenRefine for Ecologists](http://www.datacarpentry.org/OpenRefine-ecology-lesson/){:target='_blank' rel='noopener'} or [OpenRefine for Social Science Data](https://datacarpentry.org/openrefine-socialsci/){:target='_blank' rel='noopener'}.
 - [Grateful Data](https://github.com/scottythered/gratefuldata/wiki){:target='_blank' rel='noopener'}, extensive tutorial covering harvesting and enriching open Grateful Dead data.
 - [Fetching and Parsing Data from the Web with OpenRefine](https://programminghistorian.org/en/lessons/fetch-and-parse-data-with-openrefine)
+- [OpenRefine Recipes Wiki](https://github.com/OpenRefine/OpenRefine/wiki/Recipes)
 - [Handy OpenRefine Functions to Remember]({{ '/content/handy.html' | relative_url }}), notes about useful GREL functions.
 
 {% include alert.html text='Keep in mind OpenRefine was called GoogleRefine from around 2010 to 2013.

@@ -24,7 +24,7 @@ For example, split on a new line:
 
 `value.split(/\n/)`
 
-Once the cell is an array, it can be rearranged and sliced in many ways with [array functions]((https://github.com/OpenRefine/OpenRefine/wiki/GREL-Array-Functions).
+Once the cell is an array, it can be rearranged and sliced in many ways with [array functions](https://docs.openrefine.org/manual/grelfunctions/#array-functions).
 Then reconstitute the string by using `join()` on the array. 
 
 For example, if we had a list of tags like "dogs; cats; muffins" as a cell value we could put them in alphabetic order using:
@@ -55,6 +55,11 @@ Remove the last two lines:
 Or trim the white space for each value:
 
 `forEach(value.split(/\n/),e,e.trim()).join("\n")`
+
+## Combining columns
+
+Combining columns can be tricky because merging a blank cell cell with another value results in an error. 
+To avoid issues, first facet by blank and combine only non-empty cells with a transform like: `value + " " + cells["col_2"].value`
 
 ## De-dupe
 
