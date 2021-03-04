@@ -26,7 +26,7 @@ I recommend using the Adopt OpenJDK installer which is just as easy to install a
 [Adopt OpenJDK](https://adoptopenjdk.net/) provides installers for openly licensed Java. 
 This effort is [supported by major tech companies](https://adoptopenjdk.net/about.html) (outside of Oracle). 
 
-- Visit the [Adopt OpenJDK](https://adoptopenjdk.net/about.html) page.
+- Visit the [Adopt OpenJDK](https://adoptopenjdk.net/) page.
 - Select the most recent LTS version (*OpenJDK 11 (LTS)* as of this writing) and HotSpot JVM, then click the download button (.MSI installer).
 - Double click the installer to run:
     - Accept the licence.
