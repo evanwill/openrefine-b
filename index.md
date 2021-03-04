@@ -7,6 +7,8 @@ layout: default
 
 {% include figure.html img="armand-khoury-mVfo_gTcwoM-unsplash.jpg" alt="Twisting network visualization image" %}
 
+{% include button.html text="Workshop Video on YouTube (March 2021)" link="https://youtu.be/yTJ6x6zEQmI" color="success" centered=true %}
+
 Before analysis comes the messy work of evaluating, cleaning, and transforming data.
 This hands on workshop will introduce a free power tool to get the job done: {% include icon.html icon="gem" %} [OpenRefine](http://openrefine.org/index.html){:target='_blank' rel='noopener'}. 
 We will install Refine, create a project, and get oriented to the many features for exploring and transforming tabular data. 
