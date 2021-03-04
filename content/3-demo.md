@@ -81,6 +81,7 @@ The features used to explore data become the means to isolate issues so that you
         - `value.length()`
     - "Split into several columns..." -- this powerful option can split multi-valued fields into separate columns.  
     - "Add column by fetching URLs..." -- this allows you to retrieve information from the web, i.e. web scrape directly from your table. This is very useful to harvest information or hit APIs that can enrich your data. Once harvested GREL provides HTML, XML, and JSON parsing abilities to transform the results.
+        - e.g. IIIF api recipe: `"https://digital.lib.uidaho.edu/digital/iiif/phs/" + value + "/info.json"`
 - <span class="term">Multi-valued cells</span>
     - "Edit cells" > "Split multi-valued cells..." -- splitting multi-valued cells will result in more rows in your project, so take care with the [rows / records](https://docs.openrefine.org/manual/exploring/#rows-vs-records) distinction. Once you split in one column, you generally should not run transformations on any other columns until you put the split back together with "Join multi-valued cells". 
     - "Edit cells" > "Cluster and edit..." -- Refine provides several builtin clustering methods to help clean up values in your data. See [Clustering in Depth](https://github.com/OpenRefine/OpenRefine/wiki/Clustering-In-Depth) for details.
