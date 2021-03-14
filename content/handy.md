@@ -4,6 +4,24 @@ title: Handy Functions Reference
 
 This page lists some handy functions to use for data wrangling tasks.
 
+## Combining columns
+
+Combining columns can be tricky because merging a blank cell cell with another value results in an error. 
+To avoid issues, first facet by blank and combine only non-empty cells with a transform like: `value + " " + cells["col_2"].value`
+
+## De-dupe
+
+On the key column, click "Sort", and choose sort method.
+Next to the show rows selection above the table, click on the "Sort" menu. 
+Select "Reorder row permanently" (if you do not do this step, sort is just visual and did not transform the data).
+On the key column, select "Edit cells" > "Blank down".
+Facet on blank, remove all matching rows.
+
+## Compare two columns
+
+Create new "equal" column using expression:
+`if(cells["column1"].value == cells["column2"].value, "True", "False")`
+
 ## Cross function
 
 Use `cross` to retrieve values from another OpenRefine project based on a common key column. 
@@ -39,9 +57,13 @@ Remove the last item in the list:
 
 `value.split("; ").slice(-1).join("; ")`
 
-Or trim the white space for each value:
+Trim the white space for each value:
 
 `forEach(value.split(";"),e,e.trim()).join(";")`
+
+Or filter out values based on condition:
+
+`filter(value.split(";"),v,v.contains("dogs") == false)`
 
 If you had lines of a poem or text as a cell value you could do the same types of operations.
 For example, remove the first line of a poem:
@@ -56,30 +78,17 @@ Or trim the white space for each value:
 
 `forEach(value.split(/\n/),e,e.trim()).join("\n")`
 
-## Combining columns
-
-Combining columns can be tricky because merging a blank cell cell with another value results in an error. 
-To avoid issues, first facet by blank and combine only non-empty cells with a transform like: `value + " " + cells["col_2"].value`
-
-## De-dupe
-
-On the key column, click "Sort", and choose sort method.
-Next to the show rows selection above the table, click on the "Sort" menu. 
-Select "Reorder row permanently" (if you do not do this step, sort is just visual and did not transform the data).
-On the key column, select "Edit cells" > "Blank down".
-Facet on blank, remove all matching rows.
-
-## Compare two columns
-
-Create new "equal" column using expression:
-`if(cells["column1"].value == cells["column2"].value, "True", "False")`
-
 ## Add leading zeros 
 
 If the column has numbers that should have leading zeros, add the number of zeros it should have in total digits, sliced by value length. 
 For example, if you had "12345", "123456", "1234567", and wanted them all to be 8 digits with leading zeros, transform using: 
 
 `"00000000"[0,8-length(value)] + value`
+
+You can also create a new row identifier with leading zeros using the `row.index` variable. 
+For example,
+
+`"row_id_" + "0000"[0,4-length(row.index +1)] + (row.index +1)`
 
 ## Remove trailing period (or other character)
 
@@ -103,7 +112,11 @@ transform with `forEach(value.parseJson().keywords,v,v.text).join("; ")`, result
 
 ## Common HTML parsing
 
+Combining "Create new column by fetching from URL" and the `parseHtml()` GREL function is a powerful and flexible method to harvest data from the web or scrape sites. 
+Always remember to use `.toString()` or `.join("|")` at the end of your parsing statements or you will end up with empty cells even through your html parsing is correct!
+
 I often use these GREL statements to extract stuff out of HTML:
 
 - get all image src out: `forEach(value.parseHtml().select('img'),i,i.htmlAttr('src')).join("; ")`
 - get all links out: `forEach(value.parseHtml().select('a'),i,i.htmlAttr('href')).join("; ")`
+- cells out of a table rows: `forEach(value.parseHtml().select('tr'),i,i.select('td')).join("; ")`
