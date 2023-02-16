@@ -18,7 +18,7 @@ Check the [official installation documentation](https://docs.openrefine.org/manu
 {% capture mac %}
 - **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest "Mac kit". This is a self contained package that includes everything needed to run Refine on your system (e.g. "openrefine-mac-3.4.1.dmg").
 - **Install:** drag the Refine kit from your downloads to the Applications folder.
-- **Run:** click the Refine icon in your Applications folder. 
+- **Run:** click the Refine icon in your Applications folder. The first time running the program you will get a security warning--you will need to right-click/two finger click and select "Open" from the context menu, then click "Open" on the security warning.
 {% endcapture %}
 {% capture linux %}
 - **Java:** if you do not have Java JRE/JDK, install latest Java from your distro's repositories. For example, on Ubuntu/Debian: `sudo apt install default-jre`
