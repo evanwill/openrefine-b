@@ -9,13 +9,14 @@ This page lists some handy functions to use for data wrangling tasks.
 Combining columns can be tricky because merging a blank cell cell with another value results in an error. 
 To avoid issues, first facet by blank and combine only non-empty cells with a transform like: `value + " " + cells["col_2"].value`
 
-## De-dupe
+## De-dupe Rows
 
-On the key column, click "Sort", and choose sort method.
-Next to the show rows selection above the table, click on the "Sort" menu. 
-Select "Reorder row permanently" (if you do not do this step, sort is just visual and did not transform the data).
-On the key column, select "Edit cells" > "Blank down".
-Facet on blank, remove all matching rows.
+Deduplicate rows using the values in a key column: 
+
+- On the key column to deduplicate, click "Sort", and choose sort method.
+- Next to the show rows selection above the table, click on the "Sort" menu (this menu only shows up once you add a Sort). Select "Reorder row permanently" (if you do not do this step, sort is just visual and did not transform the data).
+- On the key column, select "Edit cells" > "Blank down".
+- On the key column, facet on blank, select true (the blank values), and remove all matching rows.
 
 ## Compare two columns
 
@@ -35,35 +36,36 @@ You should have a new column that has the correct values from the other project.
 
 ## String + Array functions
 
-A powerful way to interact with large strings (such as the text of poems or web scrape) is to turn them into arrays, then use array functions to manipulate. 
+A powerful way to interact with multi-valued text fields (values with a separator in them, e.g. `dogs; muffins; cats; idaho`) or large strings (such as the text of poems or web scrape) is to turn them into arrays, then use array functions to manipulate. 
+You might be surprized by how useful it is to break text values into arrays!
+
 Create an array from any string by using the `split(value, expression)` function. 
 The expression is the character or pattern you want to split the string up on, often a new line or a deliminator in a list. 
-For example, split on a new line:
 
-`value.split(/\n/)`
+For example, split on semi-colon `value.split(";")` (a classic multi-valued cell list), split on spaces `value.split(" ")` (basic word array), or split on a new line `value.split(/\n/)` (lines of a text).
 
-Once the cell is an array, it can be rearranged and sliced in many ways with [array functions](https://docs.openrefine.org/manual/grelfunctions/#array-functions).
-Then reconstitute the string by using `join()` on the array. 
+Once the cell is an array, it can be rearranged and sliced in many ways with [array functions](https://openrefine.org/docs/manual/grelfunctions#array-functions).
+Finally, reconstitute the string by using `join()` on the array (usually using the same deliminator that you used to split!). 
 
-For example, if we had a list of tags like "dogs; cats; muffins" as a cell value we could put them in alphabetic order using:
+For example, if we had a column with lists of tags like "dogs;cats;muffins" as cell values, we could put each cell in alphabetic order using:
 
-`value.split("; ").sort().join("; ")`
+`value.split(";").sort().join(";")`
 
 Remove the first item in the list:
 
-`value.split("; ").slice(1).join("; ")`
+`value.split(";").slice(1).join(";")`
 
 Remove the last item in the list:
 
-`value.split("; ").slice(-1).join("; ")`
+`value.split(";").slice(-1).join(";")`
 
-Trim the white space for each value:
+Remove duplicate values in the list:
+
+`value.split(";").uniques().join(";")`
+
+Or trim the white space for each value:
 
 `forEach(value.split(";"),e,e.trim()).join(";")`
-
-Or filter out values based on condition:
-
-`filter(value.split(";"),v,v.contains("dogs") == false)`
 
 If you had lines of a poem or text as a cell value you could do the same types of operations.
 For example, remove the first line of a poem:
@@ -74,7 +76,7 @@ Remove the last two lines:
 
 `value.split(/\n/).slice(-2).join("\n")`
 
-Or trim the white space for each value:
+Or trim the white space around each line:
 
 `forEach(value.split(/\n/),e,e.trim()).join("\n")`
 
@@ -145,3 +147,27 @@ I often use these GREL statements to extract stuff out of HTML:
 - get all image src out: `forEach(value.parseHtml().select('img'),i,i.htmlAttr('src')).join("; ")`
 - get all links out: `forEach(value.parseHtml().select('a'),i,i.htmlAttr('href')).join("; ")`
 - cells out of a table rows: `forEach(value.parseHtml().select('tr'),i,i.select('td')).join("; ")`
+
+## Parsing CONTENTdm TSV export 
+
+CONTENTdm and some other platforms export metadata in TSV format which often end up with parsing errors on import. 
+When starting a project:
+
+- make sure you select the correct encoding (for CONTENTdm = "UTF-8")
+- uncheck the option `Use character " to enclose cells containing column separators`
+- parsing issues are often not immediately apparent, so carefully check the number of records you expect and view the last rows of your data 
+
+## Local server to input data from files
+
+A goofy approach to get a bunch of text data into a spreadsheet from individual files is to serve the directory of files up on a local server then grab them using Refine's fetch.
+This avoids many limitations of working with conventional spreadsheets, and lets you parse the files into data using Refine methods such as parseHtml, split columns, or split multivalued cells.
+
+For example, imagine I have a folder of hundreds of HTML files that I want to parse into data:
+
+- create a list of the files on commandline with `ls > list.txt`
+- create Refine project using `list.txt` so each row will equal one of the files
+- [start a local server]({{ '/notes/web-server.html' | relative_url }}) in the folder of files and note where it is served (e.g. `localhost:8080`)
+- Add column based on the filenames with the local url, e.g. `"http://localhost:8080/" + value`
+- Add column by fetching urls
+
+Now you have a spreadsheet with a giant amount of text data!
