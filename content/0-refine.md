@@ -8,7 +8,7 @@ OpenRefine is a <span class="term">[free](https://www.gnu.org/philosophy/free-sw
 {% capture text %}
 The original creator [David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf){:target='_blank' rel='noopener'} said Refine is:
 
-#### "A power tool for working with messy data"
+## "A power tool for working with messy data"
 
 - more powerful than a spreadsheet
 - more interactive and visual than scripting

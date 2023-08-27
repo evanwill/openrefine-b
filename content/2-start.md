@@ -8,24 +8,30 @@ To use Refine you will need a web browser (Chrome or Firefox) and an [OpenRefine
 Check the [official installation documentation](https://openrefine.org/docs/manual/installing) or follow the quick instructions for your system below:
 
 {% capture windows %}
-- **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest "Windows kit with embedded Java" package. This is a self contained package that includes everything needed to run Refine on your system.
-- **Extract:** the package you downloaded will be a zip file that needs to be extracted (e.g. "openrefine-win-with-java-3.4.1.zip"). Unzip the package by right clicking and selecting Extract All. Move the resulting folder to a sensible permanent location on your computer, e.g. "C:\openrefine\" or Documents.
+- **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest version for Windows "with embedded Java". This is a self contained zip package that includes everything needed to run Refine on your system.
+- **Extract:** the package you downloaded will be a zip file that needs to be extracted (e.g. "openrefine-win-with-java-3.7.4.zip"). Unzip the package by right clicking and selecting Extract All. Move the resulting folder to a sensible permanent location on your computer, e.g. "C:\openrefine\" or Documents.
 - **Run:** inside the folder you extracted, double click "openrefine.exe" to start Refine. The first time you may get a warning that the publisher could not be verified, dismiss the warning and click *Run*. Once open, pin the Refine icon to your taskbar for easy access in the future! 
 
 *Note:* if you would like to use the traditional Refine kit, check [notes on installing Java on Windows]({{ '/content/win-java.html' | relative_url }}).
 {% endcapture %}
 {% capture mac %}
-- **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest "Mac kit". This is a self contained package that includes everything needed to run Refine on your system (e.g. "openrefine-mac-3.4.1.dmg").
-- **Install:** drag the Refine kit from your downloads to the Applications folder.
-- **Run:** click the Refine icon in your Applications folder. The first time running the program you will get a security warning--you will need to right-click/two finger click and select "Open" from the context menu, then click "Open" on the security warning.
+- **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest version for Mac OS. This is a self contained package that includes everything needed to run Refine on your system (e.g. "openrefine-mac-3.7.4.dmg").
+- **Install:** drag the Refine icon from your downloads to the Applications folder.
+- **Run:** click the Refine icon in your Applications folder. Usually the first time running the program you will get a security warning--you will need to right-click/two finger click and select "Open" from the context menu, then click "Open" on the security warning.
 {% endcapture %}
 {% capture linux %}
+To install the most recent version of Refine, it is best to install Java, then download the current version of Refine.
+
 - **Java:** if you do not have Java JRE/JDK, install latest Java from your distro's repositories. For example, on Ubuntu/Debian: `sudo apt install default-jre`
-- **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest "Linux kit".
-- **Extract:** the package you downloaded will be a compressed archive (e.g. "openrefine-linux-3.4.1.tar.gz"). Unpack the file using your Archive manager or Tar (e.g. `tar xzf openrefine-linux-3.4.1.tar.gz`) to a sensible permanent location (e.g. in your Home directory).
+- **Download:** visit the [Refine download page](https://openrefine.org/download.html) and choose the latest version for Linux.
+- **Extract:** the package you downloaded will be a compressed archive (e.g. "openrefine-linux-3.7.4.tar.gz"). Unpack the file using your Archive manager or Tar (e.g. `tar xzf openrefine-linux-3.7.4.tar.gz`) to a sensible permanent location (e.g. in your Home directory).
 - **Run:** open a terminal in your OpenRefine directory and type `./refine`.
+
+Alternatively, it is possible to install from some distribution repositories, e.g. `sudo apt install openrefine`.
 {% endcapture %}
 {% include accordion.html title1="Windows" text1=windows title2="Mac" text2=mac title3="Linux" text3=linux %}
+
+If you plan on working with large data files over one million cells or 50 MB, check out [Increasing memory allocation](https://openrefine.org/docs/manual/installing#increasing-memory-allocation).
 
 *Note:* In the past, installing Java was required so you may see this mentioned in tutorials--however, this is *no longer necessary* on Windows and Mac!
 
@@ -49,6 +55,7 @@ For best results, use Chrome, Chromium, or Firefox browser." color="success" %}
 
 OpenRefine gets [regular updates](https://openrefine.org/whats_new) which fix bugs, improve features, and ensure security.
 A banner notice will appear at the top of the home screen when starting Refine if an update is available.
+
 In general, your old version will keep working just fine--but *unless you are using extensions that may not be compatible with new versions*, you will probably want to upgrade to get the latest fixes!
 
 There is no automatic updater, so upgrading is a manual process identical to your first installation. 
@@ -61,4 +68,4 @@ If your "workspace" contains critical data, it is a good practice to backup the 
 To find your "workspace", click the "Open project" tab on the Refine start page side bar, then look at the bottom of the screen and click on "Browse workspace directory". 
 This should open a file explorer window on your system in the "workspace" folder (see [where data is stored](https://openrefine.org/docs/manual/installing#set-where-data-is-stored){:target='_blank' rel='noopener'}).
 
-You can find details about different Refine versions on the [Release notes page](https://openrefine.org/whats_new) or the [GitHub Releases](https://github.com/OpenRefine/OpenRefine/releases).
+You can find details about different Refine versions on the [Release notes](https://openrefine.org/whats_new) or the [GitHub Releases](https://github.com/OpenRefine/OpenRefine/releases).

@@ -3,7 +3,7 @@ title: Power tool for Messy Data
 nav: Data
 ---
 
-One of Refine's strengths is the flexibility to handle all sorts of data from all sorts of sources:
+One of Refine's strengths is the flexibility to handle all sorts of data from all sorts of sources.
 
 {% capture formats %}
 <span class="term">Import formats:</span> CSV, TSV, custom separator, Excel, ODS spreadsheet, XML, JSON, RDF, Google Sheets, MARC, line-based text...

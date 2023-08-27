@@ -7,7 +7,7 @@ Let's look at the basic functions of OpenRefine using demo data.
 Download a CSV:
 
 - [potlatch_historical_collection.csv]({{ '/assets/potlatch_historical_collection.csv' | relative_url }}){:target='_blank' rel='noopener'} (typical digital collection metadata from [University of Idaho Library](https://www.lib.uidaho.edu/digital/){:target='_blank' rel='noopener'})
-- [university_wiki_data.csv]({{ '/assets/university_wiki_data.csv' | relative_url }}){:target='_blank' rel='noopener'} (messy data about University endowments harvested from Wikipedia, from the [Enipedia OpenRefine Tutorial](http://enipedia.tudelft.nl/wiki/OpenRefine_Tutorial){:target='_blank' rel='noopener'})
+- [university_wiki_data.csv]({{ '/assets/university_wiki_data.csv' | relative_url }}){:target='_blank' rel='noopener'} (messy data about University endowments harvested from Wikipedia, from the [Enipedia OpenRefine Tutorial](https://web.archive.org/web/20190105063215/http://enipedia.tudelft.nl/wiki/OpenRefine_Tutorial){:target='_blank' rel='noopener'})
 - [doaj_article_sample.csv]({{ '/assets/doaj_article_sample.csv' | relative_url }}){:target='_blank' rel='noopener'} (citations harvested from DOAJ, from [Library Carpentry OpenRefine](https://librarycarpentry.org/lc-open-refine/){:target='_blank' rel='noopener'})
 
 ----------
@@ -17,28 +17,46 @@ Download a CSV:
 On Refine's home page you will see three main options on the left side tab menu:
 
 - <span class="term">Create Project</span> -- this is where you start a new project--we will cover everything in next section! 
-- <span class="term">Open Project</span> -- all your projects will be saved in your "workspace directory" and can be reopened at any time. 
-- <span class="term">Import Project</span> -- complete Refine projects can be exported as an archive file (".zip" or ".tar.gz") to share or preserve. This option allows you to open the archive to use the project.
+- <span class="term">Open Project</span> -- all your projects will be saved in your "workspace directory" and can be reopened at any time on this computer. This menu allows you to manage, open, and delete your saved projects.
+- <span class="term">Import Project</span> -- complete Refine projects (including history) can be exported as an archive file (".tar.gz") to share or preserve. This option allows you to open the archive to use the project. Importing will create a new copy of the project in your "workspace directory".
 
 ----------
 
 ## [Create Project](https://openrefine.org/docs/manual/starting)
 
+This menu will take you through loading and parsing data to start a new Refine project:
+
 - <span class="term">"Get data from"</span>
-    - This menu offers a variety of sources for loading data to start a new project--from pasting in a clipboard to connecting with a Google Sheet. Most commonly is loading a file from your local machine.
+    - This first menu offers a variety of sources for loading data to start a new project--from pasting in a clipboard to connecting with a Google Sheet. The most commonly used is loading a file from your local machine.
     - *Choose options:* "This computer" > Browse (select file) > Next
     - At this point Refine says "uploading data"--it might be more accurate to say copying or loading data. Information is *not* sent over the internet and your original data is never over written. Refine copies the data into your "workspace directory" into its own optimized internal format.
-- <span class="term">"Configure Parsing Options"</span> 
-    - "Parse data as" -- generally Refine guesses the correct type of data format, however you can manual select the option if necessary. Each type will have a variety of parsing options to control the import process, ensuring that your data does not become corrupted. As you select parsing options the preview window will updating, giving you a visual feedback on the process.
-    - "Character encoding" -- click in the box to select the correct character encoding. This is especially important on Windows where to avoid mangling UTF-8 files.
+- <span class="term">"Configure Parsing Options"</span>
+    - Once you have loaded a data source, this screen provides detailed options for parsing the contents and a preview of the results.
+    - "Parse data as" -- generally Refine guesses the correct type of data format, however you can manual select an option if necessary. Each type will have a variety of parsing options to control the import process, ensuring that your data does not become corrupted. As you select parsing options the preview window will update, giving you visual feedback on the process. Keep in mind that the preview only loads the first 100 rows, so issues deeper in your data may not be immediately apparent.
+    - "Character encoding" -- click in the box to select the correct character encoding. This is especially important on Windows to avoid mangling UTF-8 files.
     - "Project name" -- give your project a name, preferably without spaces or dashes.
     - Click "Create Project" to finish parsing.
-- <span class="term">Project interface elements</span>
-    - Project name (upper left) -- can be changed by clicking in the box.
-    - Facet / Filter - Undo / Redo (pane on left)
+
+----------
+
+## Project interface elements
+
+Once loading and parsing your data is complete, the window will reload in the main project interface.
+Overview of the main interface areas:
+
+- Top bar:
+    - Project name (upper left) -- can be changed by clicking in the box. Note the "Permalink" near the name--copy this link (right click, copy link) to grab a reuseable link that can restore a view with the currently applied set of filters and facets.
+    - "Open" (upper right) -- clicking this will open the Refine home page in a new tab.
+    - "Export" (upper right) -- we will cover this in the Export section below!
+    - "Help" (upper right) -- a link to the [Refine user manual](https://openrefine.org/docs).
+- "Facet / Filter - Undo / Redo" pane (on left) - toggles between:
+    - "Facet / Filter" displays the currently applied filters/facets.
+    - "Undo / Redo" displays the full history of operations on the project.
+- Table area:
     - Row count -- this is an essential piece of information! Use the row count as a **coherence check**--always ensure you have the expected number of rows after creating the project and running operations. Keep this number in mind as you work through the project.
-    - Show as: [rows / records](https://openrefine.org/docs/manual/exploring/#rows-vs-records)
-    - Show: 5 10 25 50 + pages -- the limited preview and pagination allows the Refine interface to remain quick and responsive, as well as minimizing distraction.
+    - "Show as: rows records" -- [rows vs records](https://openrefine.org/docs/manual/exploring/#rows-vs-records) is an important concept that can cause confusion. If you don't want Refine to parse the record groupings, ensure the first column of your data has NO blank values!
+    - "Show: 5 10 25 50 100 500 1000 rows" -- the limited preview and pagination allows the Refine interface to remain quick and responsive, as well as minimizing distraction.
+    - Column menus -- each column has a menu accessed by clicking the down arrow next to the name. This is where most Refine operations are accessed. The "All" column is added by Refine to provide some special functions.
 
 ----------
 
@@ -108,5 +126,5 @@ Your project and its history are always autosaved in your "working directory", a
 - <span class="term">Export</span>
     - When clicking the Export button, you will be exporting the current subset of your data, i.e. what you can view with the current filters and facets applied. This is amazingly helpful for creating data subsets quickly in different formats!
     - "OpenRefine project archive to file" -- this export is the internal Refine format. Only use this if you want to move or share the Refine project itself to another computer.
-    - Many exciting formats available! (unlike Excel, Refine correctly encodes and forms all export formats ensuring you will have good data for the next steps of your project)
+    - Many exciting formats available! (unlike Excel, Refine correctly encodes and formats all export options ensuring you will have good data for the next steps of your project)
     - "Templating" -- allows you to export *any* type of file by editing the template elements and using GREL expressions. Each row will iterate through your template and be exported to a plain text file. By default it is set up to export JSON, but can be modified to create anything--transform your table into a novel!
