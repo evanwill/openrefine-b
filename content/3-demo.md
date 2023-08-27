@@ -22,7 +22,7 @@ On Refine's home page you will see three main options on the left side tab menu:
 
 ----------
 
-## [Create Project](https://docs.openrefine.org/manual/starting)
+## [Create Project](https://openrefine.org/docs/manual/starting)
 
 - <span class="term">"Get data from"</span>
     - This menu offers a variety of sources for loading data to start a new project--from pasting in a clipboard to connecting with a Google Sheet. Most commonly is loading a file from your local machine.
@@ -37,12 +37,12 @@ On Refine's home page you will see three main options on the left side tab menu:
     - Project name (upper left) -- can be changed by clicking in the box.
     - Facet / Filter - Undo / Redo (pane on left)
     - Row count -- this is an essential piece of information! Use the row count as a **coherence check**--always ensure you have the expected number of rows after creating the project and running operations. Keep this number in mind as you work through the project.
-    - Show as: [rows / records](https://docs.openrefine.org/manual/exploring/#rows-vs-records)
+    - Show as: [rows / records](https://openrefine.org/docs/manual/exploring/#rows-vs-records)
     - Show: 5 10 25 50 + pages -- the limited preview and pagination allows the Refine interface to remain quick and responsive, as well as minimizing distraction.
 
 ----------
 
-## [Explore](https://docs.openrefine.org/manual/exploring)
+## [Explore](https://openrefine.org/docs/manual/exploring)
 
 Refine provides a variety of features to explore and learn about your data, diving into the details to discover the contents.
 Most of these operations are accessed via menus on each column and act on the values in that column.
@@ -62,7 +62,7 @@ These do not make any changes to data directly.
 
 ----------
 
-## [Transform](https://docs.openrefine.org/manual/transforming)
+## [Transform](https://openrefine.org/docs/manual/transforming)
 
 Once you get to know your data, it's time to start cleaning.
 The features used to explore data become the means to isolate issues so that you can apply operations to fix groups of rows/cells with similar problems. 
@@ -71,11 +71,11 @@ The features used to explore data become the means to isolate issues so that you
 - <span class="term">Edit facet</span> -- hover over facet to edit all cells with that value. This is a fast and powerful way to mass edit.
 - <span class="term">Edit cells > Transform</span> 
     - "Common Transformations"
-    - "Transform" -- use the [GREL](https://docs.openrefine.org/manual/grelfunctions){:target='_blank' rel='noopener'} mini-language to manipulate cell values. The transform window provides a live preview allowing you to debug your expressions.
+    - "Transform" -- use the [GREL](https://openrefine.org/docs/manual/grelfunctions){:target='_blank' rel='noopener'} mini-language to manipulate cell values. The transform window provides a live preview allowing you to debug your expressions.
         - add text, `value + " something new"`
         - find & replace, `value.replace("old","new")`
         - get values from other cells, `cells['column_name'].value`
-        - [GREL dates](https://docs.openrefine.org/manual/grelfunctions/#date-functions){:target='_blank' rel='noopener'}, `value.toDate().toString('yyyy-MM-dd')`
+        - [GREL dates](https://openrefine.org/docs/manual/grelfunctions/#date-functions){:target='_blank' rel='noopener'}, `value.toDate().toString('yyyy-MM-dd')`
 - <span class="term">Edit column</span>
     - "Add column based on..." -- this option adds a new column to your project, using a GREL expression, which is a common strategy for cleaning your data in Refine. Creating a new column allows you to check against the original to ensure your transformation goes as expected.
         - `value.length()`
@@ -83,7 +83,7 @@ The features used to explore data become the means to isolate issues so that you
     - "Add column by fetching URLs..." -- this allows you to retrieve information from the web, i.e. web scrape directly from your table. This is very useful to harvest information or hit APIs that can enrich your data. Once harvested GREL provides HTML, XML, and JSON parsing abilities to transform the results.
         - e.g. IIIF api recipe: `"https://digital.lib.uidaho.edu/digital/iiif/phs/" + value + "/info.json"`
 - <span class="term">Multi-valued cells</span>
-    - "Edit cells" > "Split multi-valued cells..." -- splitting multi-valued cells will result in more rows in your project, so take care with the [rows / records](https://docs.openrefine.org/manual/exploring/#rows-vs-records) distinction. Once you split in one column, you generally should not run transformations on any other columns until you put the split back together with "Join multi-valued cells". 
+    - "Edit cells" > "Split multi-valued cells..." -- splitting multi-valued cells will result in more rows in your project, so take care with the [rows / records](https://openrefine.org/docs/manual/exploring/#rows-vs-records) distinction. Once you split in one column, you generally should not run transformations on any other columns until you put the split back together with "Join multi-valued cells". 
     - "Edit cells" > "Cluster and edit..." -- Refine provides several builtin clustering methods to help clean up values in your data. See [Clustering in Depth](https://github.com/OpenRefine/OpenRefine/wiki/Clustering-In-Depth) for details.
 - <span class="term">All</span> column
     - Edit rows > Remove all matching rows -- a common transformation approach is to isolate a subset of rows to delete from the project.
@@ -97,7 +97,7 @@ The features used to explore data become the means to isolate issues so that you
 
 ----------
 
-## [Export](https://docs.openrefine.org/manual/exporting)
+## [Export](https://openrefine.org/docs/manual/exporting)
 
 Once you have wrangled, cleaned, and enhanced your data it is time to export it for your next steps. 
 Refine is great at transforming data from one format into another, so it's export options are particularly flexible and useful.

@@ -15,14 +15,14 @@ One of Refine's strengths is the flexibility to handle all sorts of data from al
 {% include card.html text=formats %}
 
 When creating a new project, Refine imports the data *without* changing the original source, saving a copy using an optimized format in the "workspace directory" on your computer.
-Importantly, Refine is *not* a cloud based service, no data is sent off your computer during this process (see [where data is stored](https://docs.openrefine.org/manual/installing#set-where-data-is-stored){:target='_blank' rel='noopener'} and [data privacy FAQ](https://openrefine.org/privacy.html){:target='_blank' rel='noopener'}).
+Importantly, Refine is *not* a cloud based service, no data is sent off your computer during this process (see [where data is stored](https://openrefine.org/docs/manual/installing#set-where-data-is-stored){:target='_blank' rel='noopener'} and [data privacy FAQ](https://openrefine.org/privacy.html){:target='_blank' rel='noopener'}).
 
 Once imported into a project, Refine's interface represents the data in a tabular grid, using this basic terminology: 
 
 {% include figure.html img="refine-terms.png" alt="Refine row, column, cell labelled" %}
 
 Refine is efficient enough to provide comfortable performance up to 100,000's of rows.
-For very large data sets, you may want to [increase memory allocation](https://docs.openrefine.org/manual/installing#increasing-memory-allocation){:target='_blank' rel='noopener'}.
+For very large data sets, you may want to [increase memory allocation](https://openrefine.org/docs/manual/installing#increasing-memory-allocation){:target='_blank' rel='noopener'}.
 
 ## Messy Data 
 
