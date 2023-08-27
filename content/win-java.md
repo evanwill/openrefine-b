@@ -19,17 +19,17 @@ If you want to install Java on your Windows system you have a few options depend
 In the past most people used "Oracle Java", however, in 2019 Oracle [significantly changed their license terms](https://www.oracle.com/java/technologies/javase/jdk-faqs.html), which limits what is considered "personal use". 
 *If you are installing Java on a work or research computer you are safer using an open alternative unless your organization pays for a license.*
 
-I recommend using the Adopt OpenJDK installer which is just as easy to install as Oracle Java, but is free and openly licensed.
+I recommend using the Adoptium installer which is just as easy to install as Oracle Java, but is free and openly licensed.
 
-### Adopt OpenJDK (Recommended)
+### Adoptium (Recommended)
 
-[Adopt OpenJDK](https://adoptopenjdk.net/) provides installers for openly licensed Java. 
-This effort is [supported by major tech companies](https://adoptopenjdk.net/about.html) (outside of Oracle). 
+[Adoptium](https://adoptium.net/) provides installers for openly licensed Java (previously known as Adopt OpenJDK). 
+This effort is [supported by major tech companies](https://adoptium.net/about/) (outside of Oracle). 
 
-- Visit the [Adopt OpenJDK](https://adoptopenjdk.net/) page.
-- Select the most recent LTS version (*OpenJDK 11 (LTS)* as of this writing) and HotSpot JVM, then click the download button (.MSI installer).
+- Visit the [Adoptium](https://adoptium.net/) page.
+- Select the latest LTS version (which will be highlighted on the page, *Temurin 17 (LTS)* as of this writing) and click the download button (.MSI installer).
 - Double click the installer to run:
-    - Accept the licence.
+    - Accept the license.
     - On "Custom Setup" options, use the default options, plus add option "Updating the JAVA_HOME environment variable".
     - Click Next to finish installation.
 
@@ -54,7 +54,7 @@ This option provides the Java package, but not an installer--thus installation i
 - Click the "Ready for use" JDK version link.
 - Download the package for your system (i.e. "Windows / x64").
 - Unzip the downloaded package 
-- Copy the complete folder (something like "jdk-15.0.2") into a sensible location (i.e. `C:\jdk-15.0.2`)
+- Copy the complete folder (something like "openjdk-20.0.2") into a sensible location (i.e. `C:\openjdk-20.0.2`)
 - Manually edit your system variables (see next section)
 
 #### Edit Windows System Variables
@@ -68,8 +68,8 @@ You will need to manually edit your system variables to add Java to your Path.
 - (alternatively, Control Panel > System > System properties > "Advanced" tab, click "Environment Variables" button)
 - In "Environment variables" window: 
     - Highlight "Path" and click "Edit"
-    - In the "Path" window, click "New", add the file path to the "bin" folder inside the Java package you downloaded (e.g. `C:\jdk-15.0.2\bin` ), and click okay.
-    - Click "New", name the variable "JAVA_HOME", add the file path to the main folder of your Java package (e.g. `C:\jdk-15.0.2`, without \bin), and click okay.
+    - In the "Path" window, click "New", add the file path to the "bin" folder inside the Java package you downloaded (e.g. `C:\openjdk-20.0.2\bin` ), and click okay.
+    - Click "New", name the variable "JAVA_HOME", add the file path to the main folder of your Java package (e.g. `C:\openjdk-20.0.2`, without \bin), and click okay.
     - Click "Okay"
 
 {% include figure.html img="win-system-properties.png" alt="System properties window" %}
