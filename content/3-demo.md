@@ -34,7 +34,7 @@ This menu will take you through loading and parsing data to start a new Refine p
     - Once you have loaded a data source, this screen provides detailed options for parsing the contents and a preview of the results.
     - "Parse data as" -- generally Refine guesses the correct type of data format, however you can manual select an option if necessary. Each type will have a variety of parsing options to control the import process, ensuring that your data does not become corrupted. As you select parsing options the preview window will update, giving you visual feedback on the process. Keep in mind that the preview only loads the first 100 rows, so issues deeper in your data may not be immediately apparent.
     - "Character encoding" -- click in the box to select the correct character encoding. This is especially important on Windows to avoid mangling UTF-8 files.
-    - "Project name" -- give your project a name, preferably without spaces or dashes.
+    - "Project name" -- give your project a name, preferably without spaces or special characters. It is helpful to follow a descriptive filenaming convention to keep organized and remember what you were doing with this particular instance of the data (e.g. adding a date or identifier).
     - Click "Create Project" to finish parsing.
 
 ----------
@@ -45,7 +45,8 @@ Once loading and parsing your data is complete, the window will reload in the ma
 Overview of the main interface areas:
 
 - Top bar:
-    - Project name (upper left) -- can be changed by clicking in the box. Note the "Permalink" near the name--copy this link (right click, copy link) to grab a reuseable link that can restore a view with the currently applied set of filters and facets.
+    - Project name (upper left) -- can be changed by clicking in the box. 
+    - "Permalink" (near the name) -- copy this link (right click, copy link) to grab a reuseable link that can restore a view with the currently applied set of filters and facets. This link is only usable on your computer and this copy of the project.
     - "Open" (upper right) -- clicking this will open the Refine home page in a new tab.
     - "Export" (upper right) -- we will cover this in the Export section below!
     - "Help" (upper right) -- a link to the [Refine user manual](https://openrefine.org/docs).
@@ -56,6 +57,7 @@ Overview of the main interface areas:
     - Row count -- this is an essential piece of information! Use the row count as a **coherence check**--always ensure you have the expected number of rows after creating the project and running operations. Keep this number in mind as you work through the project.
     - "Show as: rows records" -- [rows vs records](https://openrefine.org/docs/manual/exploring/#rows-vs-records) is an important concept that can cause confusion. If you don't want Refine to parse the record groupings, ensure the first column of your data has NO blank values!
     - "Show: 5 10 25 50 100 500 1000 rows" -- the limited preview and pagination allows the Refine interface to remain quick and responsive, as well as minimizing distraction.
+    - "first" "previous" "next" "last" -- pagination buttons allow you to step through the rows of your data. Jumping to "last" is often a good **coherence check** when importing your data since scrambled parsing tends to result in messed up rows at the end.
     - Column menus -- each column has a menu accessed by clicking the down arrow next to the name. This is where most Refine operations are accessed. The "All" column is added by Refine to provide some special functions.
 
 ----------
@@ -67,12 +69,15 @@ Most of these operations are accessed via menus on each column and act on the va
 
 Applying Text Filter, Facets, or Sort are means to fluidly subset your data, changing your view of it. 
 These do not make any changes to data directly.
+You can apply multiple filters and facets at the same time to build a more complex set of conditions for your subset.
 
 - <span class="term">Text Filter</span>
+    - invert, reset
 - <span class="term">Facet</span> 
     - "Text facet"
-        - include / invert
-        - sort by, choices
+        - include, invert, reset
+        - sort by name / count
+        - choices
     - "Customized facets" > "Facet by blank"
 - <span class="term">Sort</span>
     - Sort will add "Sort" menu at the top of the table, near the "rows" options. This indicates the sort is applied to your view. However, it is only a *view*, the data has not been changed. 
@@ -111,7 +116,7 @@ The features used to explore data become the means to isolate issues so that you
     - *Be brave!* Undo / Redo tab records every operation applied to your data. You can always check your history and undo anything. This is a great feature for transparency to verify how your data was transformed before analysis.
     - *Note:* only applied operations are recorded. Playing around with facets and filters that change only the view temporarily are not recorded. When an transformation is applied to a faceted view, the subset is recorded as part of that operation.
     - "Extract" -- opens a JSON object recording your operations. To save your process, copy the JSON into a text file (not Word). 
-    - "Apply" -- paste in a save Extract JSON, then click Perform Operations to apply the exact processing routine. This is a great way to automate (or semi-automate) your data wrangling on repeating projects. *Note:* the data must be structured with the exact same columns.
+    - "Apply" -- paste in a save Extract JSON, then click Perform Operations to apply the exact processing routine. This is a great way to automate (or semi-automate) your data wrangling on repeating projects. *Note:* the data must be structured with the exact same column names.
 
 ----------
 
@@ -127,4 +132,4 @@ Your project and its history are always autosaved in your "working directory", a
     - When clicking the Export button, you will be exporting the current subset of your data, i.e. what you can view with the current filters and facets applied. This is amazingly helpful for creating data subsets quickly in different formats!
     - "OpenRefine project archive to file" -- this export is the internal Refine format. Only use this if you want to move or share the Refine project itself to another computer.
     - Many exciting formats available! (unlike Excel, Refine correctly encodes and formats all export options ensuring you will have good data for the next steps of your project)
-    - "Templating" -- allows you to export *any* type of file by editing the template elements and using GREL expressions. Each row will iterate through your template and be exported to a plain text file. By default it is set up to export JSON, but can be modified to create anything--transform your table into a novel!
+    - "Templating" -- allows you to export *any* type of plain text file by editing the template elements and using GREL expressions. Each row will iterate through your template and be exported to a plain text file. By default it is set up to export JSON, but can be modified to create anything--transform your table into a novel!
